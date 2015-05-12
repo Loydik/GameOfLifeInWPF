@@ -1,0 +1,75 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:GameOfLife_in_WPF">
+
+   
+    <Style TargetType="{x:Type local:CellControl}">
+        <Setter Property="Fill">
+            <Setter.Value>
+                <SolidColorBrush Color="White" />
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Cell.Alive}" Value="False">
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <SolidColorBrush Color="White" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Cell.Alive}" Value="True">
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <SolidColorBrush Color="Blue" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--
+    <DataTemplate x:Key="DataTemplate_Level2" DataType="{x:Type local:CellViewModel}">
+        <Grid Margin="1,1,1,1">
+            <local:CellControl />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Level1">
+        <local:CellPanelControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}">
+            <local:CellPanelControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </local:CellPanelControl.ItemsPanel>
+        </local:CellPanelControl>
+    </DataTemplate>
+
+    <Style TargetType="{x:Type local:CellPanelControl}">
+        <Setter Property="ItemTemplate" Value="{DynamicResource DataTemplate_Level1}" />
+        <Setter Property="ItemsSource" Value="{Binding}" />
+        
+        <Setter.Value>
+                <DataTemplate DataType="{x:Type local:CellViewModel}">
+                            <Grid Margin="1,1,1,1">
+                                <local:CellControl />
+                             </Grid>
+                </DataTemplate>
+            </Setter.Value> 
+        </Setter>
+
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        
+    
+    </Style>
+
+    -->
+    
+</ResourceDictionary>
